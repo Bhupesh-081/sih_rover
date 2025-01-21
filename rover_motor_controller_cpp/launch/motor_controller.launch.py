@@ -37,7 +37,6 @@ def generate_launch_description():
     #
     # ARGS
     #
-
     hardware_distances = LaunchConfiguration("hardware_distances")
     declare_hardware_distances_cmd = DeclareLaunchArgument(
         "hardware_distances",
@@ -47,7 +46,9 @@ def generate_launch_description():
 
     enc_min = LaunchConfiguration("enc_min")
     declare_enc_min_cmd = DeclareLaunchArgument(
-        "enc_min", default_value="250", description="enc_min"
+        "enc_min",
+        default_value="250",
+        description="enc_min",
     )
 
     speed_factor = LaunchConfiguration("speed_factor")
@@ -59,7 +60,9 @@ def generate_launch_description():
 
     enc_max = LaunchConfiguration("enc_max")
     declare_enc_max_cmd = DeclareLaunchArgument(
-        "enc_max", default_value="750", description="enc_max"
+        "enc_max",
+        default_value="750",
+        description="enc_max",
     )
 
     motor_controller_device = LaunchConfiguration("motor_controller_device")
@@ -71,7 +74,9 @@ def generate_launch_description():
 
     baud_rate = LaunchConfiguration("baud_rate")
     declare_baud_rate_cmd = DeclareLaunchArgument(
-        "baud_rate", default_value="750", description="baud rate"
+        "baud_rate",
+        default_value="115200",
+        description="baud rate",
     )
 
     #
