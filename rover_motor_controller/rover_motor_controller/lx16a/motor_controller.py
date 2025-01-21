@@ -4,8 +4,8 @@ Lewansoul wrapper.
 
 from typing import List
 
-from .lx16a import LX16A
-from .lx16a_consts import (
+from rover_motor_controller.lx16a.lx16a import LX16A
+from rover_motor_controller.lx16a.lx16a_consts import (
     MOTOR_LEFT_FRONT,
     MOTOR_LEFT_MIDDLE,
     MOTOR_LEFT_BACK,

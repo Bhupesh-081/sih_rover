@@ -9,7 +9,7 @@ from typing import List
 from serial import Serial
 from serial.serialutil import Timeout
 
-from .lx16a_consts import *
+from rover_motor_controller.lx16a.lx16a_consts import *
 
 
 ####
@@ -60,7 +60,6 @@ class LX16A(object):
             length = 3 + len(params)
             checksum = 255 - ((servo_id + length + command + sum(params)) % 256)
 
-            command_list = []
             command_list = [
                 SERVO_FRAME_HEADER,
                 SERVO_FRAME_HEADER,
@@ -70,11 +69,11 @@ class LX16A(object):
             ]
             command_list += params
             command_list += [checksum]
+
         else:
             length = 3 + 1
             checksum = 255 - ((servo_id + length + command + params) % 256)
 
-            command_list = []
             command_list = [
                 SERVO_FRAME_HEADER,
                 SERVO_FRAME_HEADER,
