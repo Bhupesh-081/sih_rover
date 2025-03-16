@@ -1,5 +1,4 @@
 <?xml version="1.0" ?>
-
 <!-- # MIT License
 
 # Copyright (c) 2023 Miguel Ángel González Santamarta
@@ -21,15 +20,12 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE. -->
-
 <robot name="corner" xmlns:xacro="http://www.ros.org/wiki/xacro">
     <xacro:property name="corner_box_length" value="0.43" />
     <xacro:property name="corner_box_width" value="0.29" />
     <xacro:property name="corner_box_depth" value="0.10" />
     <xacro:property name="corner_box_mass" value="0.25" />
-
     <xacro:include filename="$(find rover_description)/urdf/inertials.xacro"/>
-
     <!-- link -->
     <xacro:macro name="corner_link" params="lon_label lat_label reflect">
         <link name="${lon_label}_${lat_label}_corner_link">
@@ -52,15 +48,11 @@
                 rpy="0 0 0" xyz="0 0 0"
                 mass="${corner_box_mass}"
                 x="${corner_box_length}" y="${corner_box_width}" z="${corner_box_depth}" />
-        </link> 
-
+        </link>
         <gazebo reference="${lon_label}_${lat_label}_corner_link">
             <material>Gazebo/White</material>
         </gazebo>
-
     </xacro:macro>
-
-
     <!-- front joint -->
     <xacro:macro name="front_corner_joint" params="lat_label reflect">
         <joint name="front_${lat_label}_corner_joint" type="continuous">
@@ -71,13 +63,10 @@
             <limit effort="1000.0" lower="-3.14159" upper="3.14159" velocity="30"/>
             <dynamics damping="0.0" friction="0.0"/>
         </joint>
-
         <gazebo reference="front_${lat_label}_corner_joint">
             <provideFeedback>true</provideFeedback>
         </gazebo>
     </xacro:macro>
-
-
     <!-- back joint -->
     <xacro:macro name="back_corner_joint" params="lat_label reflect">
         <joint name="back_${lat_label}_corner_joint" type="continuous">
@@ -88,10 +77,8 @@
             <limit effort="1000.0" lower="-3.14159" upper="3.14159" velocity="30"/>
             <dynamics damping="0.0" friction="0.0"/>
         </joint>
-
         <gazebo reference="back_${lat_label}_corner_joint">
             <provideFeedback>true</provideFeedback>
         </gazebo>
     </xacro:macro>
-
 </robot>

@@ -1,5 +1,4 @@
 <?xml version="1.0" ?>
-
 <!-- # MIT License
 
 # Copyright (c) 2023 Miguel Ángel González Santamarta
@@ -21,11 +20,8 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE. -->
-
 <robot name="turnbuckle" xmlns:xacro="http://www.ros.org/wiki/xacro">
- 
     <xacro:include filename="$(find rover_description)/urdf/inertials.xacro"/>
-
     <xacro:macro name="turnbuckle" params="lat_label reflect">
         <gazebo>
             <link name="${lat_label}_turnbuckle_link">
@@ -68,13 +64,11 @@
                     </inertia>
                 </inertial>
             </link>
-
             <joint name="back_${lat_label}_turnbuckle_joint" type="ball">
                 <pose>-0.035 0 0 0 0 0</pose>
                 <parent>diff_brace_link</parent>
                 <child>${lat_label}_turnbuckle_link</child>
             </joint>
-
             <joint name="front_${lat_label}_turnbuckle_joint" type="ball">
                 <pose>0.035 0 0 0 0 0</pose>
                 <parent>${lat_label}_rocker_link</parent>

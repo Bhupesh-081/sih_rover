@@ -1,5 +1,4 @@
 <?xml version="1.0" ?>
-
 <!-- # MIT License
 
 # Copyright (c) 2023 Miguel Ángel González Santamarta
@@ -21,40 +20,31 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE. -->
-
 <robot name="materials" xmlns:xacro="http://www.ros.org/wiki/xacro">
-   <material name="red">
+    <material name="red">
         <color rgba="0.8 0 0 1"/>
     </material>
-
     <material name="green">
         <color rgba="0 0.8 0 1"/>
     </material>
-
     <material name="blue">
         <color rgba="0 0 0.8 1"/>
     </material>
-    
     <material name="orange">
         <color rgba="0.8 0.25 0 1"/>
     </material>
-
     <material name="black">
         <color rgba="0 0 0 1"/>
     </material>
-
     <material name="dark_gray">
         <color rgba="0.5 0.5 0.5 1"/>
     </material>
-
     <material name="gray">
         <color rgba="0.753 0.753 0.753 1"/>
     </material>
-
     <material name="silver">
         <color rgba="0.88 0.88 0.88 1"/>
     </material>
-
     <material name="white">
         <color rgba="1 1 1 1"/>
     </material>

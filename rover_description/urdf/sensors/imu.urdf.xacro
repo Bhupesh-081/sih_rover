@@ -1,5 +1,4 @@
 <?xml version="1.0" ?>
-
 <!-- # MIT License
 
 # Copyright (c) 2023 Miguel Ángel González Santamarta
@@ -21,18 +20,14 @@
 # LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE. -->
-
 <robot name="sensor_imu" xmlns:xacro="http://www.ros.org/wiki/xacro">
-
   <xacro:macro name="sensor_imu" params="prefix parent *origin">
-
     <joint name="${prefix}_joint" type="fixed">
-        <axis xyz="1 0 0"/>
-        <xacro:insert_block name="origin"/>
-        <parent link="${parent}"/>
-        <child link="${prefix}_link"/>
+      <axis xyz="1 0 0"/>
+      <xacro:insert_block name="origin"/>
+      <parent link="${parent}"/>
+      <child link="${prefix}_link"/>
     </joint>
-    
     <link name="${prefix}_link">
       <inertial>
         <mass value="0.001"/>
@@ -53,11 +48,9 @@
         </geometry>
       </collision>
     </link>
-       
     <gazebo reference="${prefix}_link">
-        <material>Gazebo/Blue</material>
+      <material>Gazebo/Blue</material>
     </gazebo>
-
     <gazebo reference="${prefix}_link">
       <sensor name="imu_sensor" type="imu">
         <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_controller">
@@ -74,12 +67,10 @@
           <initial_orientation_as_reference>false</initial_orientation_as_reference>
           <frame_name>${prefix}_link</frame_name>
         </plugin>
-        
         <always_on>true</always_on>
         <update_rate>200</update_rate>
         <visualize>true</visualize>
-      
-        <imu>      
+        <imu>
           <angular_velocity>
             <x>
               <noise type="gaussian">
@@ -133,11 +124,7 @@
             </z>
           </linear_acceleration>
         </imu>
-
       </sensor>
     </gazebo>
-
-    
   </xacro:macro>
-
 </robot>
