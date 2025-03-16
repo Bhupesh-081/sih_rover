@@ -2,13 +2,11 @@
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
   <name>rover_navigation</name>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <description>Rover Navigation2 package</description>
   <maintainer email="mgons@unileon.es">Miguel Ángel González Santamarta</maintainer>
   <license>MIT</license>
-
   <buildtool_depend>ament_cmake</buildtool_depend>
-  
   <depend>rclcpp</depend>
   <depend>rclpy</depend>
   <depend>tf2_ros</depend>
@@ -19,7 +17,6 @@
   <depend>navigation2</depend>
   <depend>nav2_smac_planner</depend>
   <depend>nav2_regulated_pure_pursuit_controller</depend>
-
   <export>
     <build_type>ament_cmake</build_type>
   </export>
