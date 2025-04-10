@@ -6,7 +6,7 @@ package_name = "rover_motor_controller"
 
 setup(
     name=package_name,
-    version="1.0.2",
+    version="1.1.0",
     packages=find_packages(),
     data_files=[
         ("share/ament_index/resource_index/packages", ["resource/" + package_name]),
